@@ -6,19 +6,19 @@
 # --- Required options --- #
 
 # Name of website
-title: test
+title: Ray的移动城堡
 
 # Your name to show in the footer
-author: test
+author: Ray
 
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "www.baidu.com"
-    - Learn markdown: "www.baidu.com"
-  Author's home: "www.baidu.com"
+  # About Me: "aboutme"
+  # Resources:
+    # - Beautiful Jekyll: "www.baidu.com"
+    # - Learn markdown: "www.baidu.com"
+  # Author's home: "www.baidu.com"
 
 # --- Logo --- #
 
