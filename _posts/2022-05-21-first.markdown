@@ -40,7 +40,7 @@ title: 这是用来掩饰头信息的
 
 # 撰写博客
 
-# 文章文件夹
+## 文章文件夹
 文章需要放在```_post```文件夹中，支持```markdown```和```texttile```格式，只要文件中有```yaml```头信息，它们就会被转化为html文件  
 文件名称需要遵循以下格式：
 ```
@@ -50,11 +50,60 @@ title: 这是用来掩饰头信息的
 //markup-扩展名
 
 年-月-日-标题.markup
+```
+
+## 引用图片和其它资源
+通常的做法是，在工程的根目录下面建立一个```assets```文件夹，然后在页面中按如下方式使用：
 
 ```
+… 从下面的截图可以看到：
+![有帮助的截图]({{ site.url }}/assets/screenshot.jpg)
+
+… 你可以直接 [下载 PDF]({{ site.url }}/assets/mydoc.pdf).
+```
+
+
 ## 文章目录
+
+```html
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+```
+
 ## 文章摘要
+
+Jekyll 会自动取每篇文章从开头到第一次出现 excerpt_separator 的地方作为文章的摘要，并将此内容保存到变量 post.excerpt 中。
+
+```html
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <p>{{ post.excerpt }}</p>
+    </li>
+  {% endfor %}
+</ul>
+```
+
 ## 高亮代码
+linenos用来控制行号显示
+```
+{% highlight ruby linenos %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}
+```
+
 
 # 使用草稿
 
